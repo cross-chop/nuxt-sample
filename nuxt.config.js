@@ -1,3 +1,6 @@
+import Fiber from 'fibers'
+import Sass from 'sass'
+
 const title = 'Webサイトのタイトル'
 const description = 'Webサイトのディスクリプション'
 const url = 'WebサイトのURL'
@@ -109,7 +112,14 @@ export default {
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
    */
-  build: {},
+  build: {
+    loaders: {
+      implementation: Sass,
+      sassOptions: {
+        fiber: Fiber,
+      },
+    },
+  },
   server: {
     port: 3000, // デフォルト: 3000
     host: '0.0.0.0', // デフォルト: localhost
