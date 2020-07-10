@@ -1,0 +1,16 @@
+{
+  "path-autocomplete.pathMappings": {
+    "/": "${folder}/static/",
+    "~": "${folder}",
+    "@": "${folder}"
+  },
+  "vetur.validation.template": false,
+  "[scss]": {
+    "editor.formatOnSave": false
+  },
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": true
+  },
+  "css.validate": false,
+  "scss.validate": false
+}
