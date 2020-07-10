@@ -1,0 +1,42 @@
+@charset "UTF-8";
+
+@mixin sp {
+  @include mq(sm, max) {
+    // mq-max未満
+    @content;
+  }
+}
+@mixin tb {
+  // @include pc 中で使う。
+  @include mq(md, max) {
+    // mq-min以上
+    @content;
+  }
+}
+
+@mixin pc {
+  @include mq(sm, min) {
+    // mq-min以上
+    @content;
+  }
+}
+
+@mixin font-pc($size, $height: null, $martop: null) {
+  font-size: $size + px;
+  @if ($height) {
+    line-height: $height + px;
+  }
+  @if ($martop) {
+    margin-top: $martop + px;
+  }
+}
+
+@mixin font-sp($size, $height: null, $martop: null) {
+  font-size: vw($size);
+  @if ($height) {
+    line-height: vw($height);
+  }
+  @if ($martop) {
+    margin-top: vw($martop);
+  }
+}

@@ -66,10 +66,13 @@ export default {
       ],
     },
   },
+  styleResources: {
+    scss: ['~/assets/scss/_import.scss'],
+  },
   /*
    ** Global CSS
    */
-  css: ['ress'],
+  css: ['ress', '~/assets/scss/app.scss'],
   /*
    ** Plugins to load before mounting the App
    ** https://nuxtjs.org/guide/plugins
@@ -95,6 +98,7 @@ export default {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/style-resources',
   ],
   /*
    ** Axios module configuration
@@ -106,4 +110,8 @@ export default {
    ** See https://nuxtjs.org/api/configuration-build/
    */
   build: {},
+  server: {
+    port: 3000, // デフォルト: 3000
+    host: '0.0.0.0', // デフォルト: localhost
+  },
 }

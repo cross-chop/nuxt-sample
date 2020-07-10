@@ -1,0 +1,26 @@
+@charset "utf-8";
+
+/** base layout */
+html {
+  @include pc {
+    font-size: $spDesignWidth * 1px;
+  }
+  @include sp {
+    font-size: 100vw;
+  }
+
+  height: 100%;
+  font-family: sans-serif;
+}
+
+body {
+  @include pc {
+    font-size: 16px;
+  }
+  @include sp {
+    font-size: rem(16);
+  }
+
+  height: 100%;
+  font-family: $fontFamily;
+}

@@ -1,0 +1,15 @@
+@charset "utf-8";
+
+$spDesignWidth: 750;
+$pcDesignWidth: 1280;
+// Breakpoint
+$screen: (
+  xs: 480px,
+  sm: 768px,
+  md: 960px,
+  lg: 1280px,
+) !default;
+
+// font-family
+$fontFamily: 'ヒラギノ角ゴPro W3', 'Hiragino Kaku Gothic Pro', 'メイリオ',
+  meiryo, 'ＭＳ Ｐゴシック', verdana, arial, helvetica, sans-serif;

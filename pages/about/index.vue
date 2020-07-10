@@ -2,7 +2,7 @@
   <div class="container">
     <div>
       <h1>
-        top
+        about
       </h1>
     </div>
   </div>
