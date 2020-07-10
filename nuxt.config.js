@@ -1,3 +1,8 @@
+const title = 'Webサイトのタイトル'
+const description = 'Webサイトのディスクリプション'
+const url = 'WebサイトのURL'
+const ogImage = `${url}/assets/image/ogp.jpg`
+
 export default {
   /*
    ** Nuxt rendering mode
@@ -15,16 +20,51 @@ export default {
    */
   head: {
     title: process.env.npm_package_name || '',
-    meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      {
-        hid: 'description',
-        name: 'description',
-        content: process.env.npm_package_description || '',
-      },
-    ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    head: {
+      title,
+      meta: [
+        { charset: 'utf-8' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { hid: 'description', name: 'description', content: description },
+        { hid: 'ogTitle', property: 'og:title', content: title },
+        { hid: 'ogType', property: 'og:type', content: 'website' },
+        { hid: 'ogUrl', property: 'og:url', content: url },
+        {
+          hid: 'ogImage',
+          property: 'og:image',
+          content: ogImage,
+        },
+        { property: 'og:site_name', content: title },
+        {
+          hid: 'ogDescription',
+          property: 'og:description',
+          content: description,
+        },
+        { name: 'twitter:card', content: 'summary_large_image' },
+        { hid: 'twitterSite', name: 'twitter:site', content: title },
+        { hid: 'twitterUrl', name: 'twitter:url', content: url },
+        { hid: 'twitterTitle', name: 'twitter:title', content: title },
+        {
+          hid: 'twitterDescription',
+          name: 'twitter:description',
+          content: description,
+        },
+        {
+          hid: 'twitterImage',
+          name: 'twitter:image:src',
+          content: ogImage,
+        },
+      ],
+      // link要素で外部リソースを読み込みたいとき
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        {
+          rel: 'stylesheet',
+          href:
+            'https://cdn.jsdelivr.net/npm/yakuhanjp@3.3.1/dist/css/yakuhanjp.min.css',
+        },
+      ],
+    },
   },
   /*
    ** Global CSS
