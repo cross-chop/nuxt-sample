@@ -102,12 +102,16 @@ export default {
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
     '@nuxtjs/style-resources',
+    '@nuxtjs/dotenv',
   ],
+  dotenv: {
+    filename: process.env.NODE_ENV !== 'production' ? '.env.dev' : '.env.prod',
+  },
   /*
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: { baseURL: process.env.BASE_URL },
   /*
    ** Build configuration
    ** See https://nuxtjs.org/api/configuration-build/
